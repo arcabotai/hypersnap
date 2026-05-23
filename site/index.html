@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hypersnap — node install and doctor toolkit</title>
+  <meta name="description" content="Install, diagnose, and share clean support reports for Hypersnap / Snapchain nodes." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Open-source node operator toolkit</p>
+      <h1>Run Hypersnap without screenshot archaeology.</h1>
+      <p class="lede">One-line install. One command to diagnose. One sanitized report when you need help.</p>
+      <div class="terminal"><code>curl -fsSL https://hypersnap.org/install.sh | bash<br/>hypersnap doctor</code></div>
+      <div class="actions">
+        <a href="https://github.com/arcabotai/hypersnap">GitHub</a>
+        <a href="#commands">Commands</a>
+      </div>
+    </section>
+
+    <section class="grid" id="commands">
+      <article>
+        <h2>Install</h2>
+        <p>Bootstrap Docker, clone the operator toolkit, and point users at the upstream Hypersnap flow.</p>
+        <code>hypersnap install</code>
+      </article>
+      <article>
+        <h2>Doctor</h2>
+        <p>Checks Docker, Compose, containers, ports, disk, memory, info endpoint, and recent logs.</p>
+        <code>hypersnap doctor --json</code>
+      </article>
+      <article>
+        <h2>Share</h2>
+        <p>Creates a sanitized diagnostic bundle for Farcaster, GitHub issues, or Discord support.</p>
+        <code>hypersnap share</code>
+      </article>
+    </section>
+
+    <section class="principles">
+      <h2>No surprise chainsaw.</h2>
+      <p><code>hypersnap doctor --fix</code> is conservative by design. It should never silently wipe chain data, expose private dashboards, change keys, or mutate dangerous infra. Risky repairs get explicit commands and warnings.</p>
+    </section>
+
+    <section class="support">
+      <h2>For support</h2>
+      <p>Instead of “it is broken” plus a blurry screenshot, ask operators for:</p>
+      <div class="terminal"><code>hypersnap share</code></div>
+      <p>The report is local-first and redacts obvious secrets. Review before posting publicly. Computers are helpful. They are not priests.</p>
+    </section>
+  </main>
+</body>
+</html>
