@@ -21,23 +21,29 @@ The goal is not to replace upstream Hypersnap. The goal is to make installation,
 ## Commands
 
 ```bash
-hypersnap status          # quick operator summary
-hypersnap doctor          # full checks with recommendations
-hypersnap doctor --json   # machine-readable diagnostics
-hypersnap doctor --fix    # safe repairs only; no data wipes
-hypersnap logs            # recent node logs
-hypersnap share           # sanitized support report
-hypersnap install         # run upstream bootstrap/install flow
+hypersnap status                # quick operator summary
+hypersnap doctor                # full checks with recommendations
+hypersnap doctor --json         # machine-readable diagnostics
+hypersnap doctor --fix          # safe repairs only; no data wipes
+hypersnap logs                  # recent node logs
+hypersnap share                 # sanitized JSON support report
+hypersnap share --markdown      # sanitized Markdown support report
+hypersnap install --preflight   # check host readiness before installing
+hypersnap install --verify      # post-install verification
+hypersnap install --print-command
+hypersnap install --yes         # run upstream bootstrap after preflight
 ```
 
 ## Safety model
 
 `hypersnap doctor --fix` may do low-risk fixes only:
 
-- create missing config directories
-- suggest package installs
-- restart an unhealthy container if explicitly allowed
+- create a missing `HYPERSNAP_HOME` directory with restrictive permissions
+- suggest package installs instead of performing them silently
 - generate sanitized reports
+- refuse destructive repairs by default
+
+It will not delete node state, wipe configs, install packages, or restart containers without a future explicit command and operator intent.
 
 It does **not** silently:
 
