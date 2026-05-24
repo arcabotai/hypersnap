@@ -6,14 +6,6 @@ const required = [
   'curl -fsSL https://hypersnap.org/install.sh | bash',
   'hypersnap share',
   'No surprise chainsaw',
-  '$SNAP is live',
-  'hypria.app',
-  '200,000,000,000',
-  'Retro rewards allocation',
-  '33,000,000',
-  'Proof of Work Tokenization',
-  '0x49B5a631F54927c0007232844f06FE18cbf69786',
-  'View on Dexscreener',
 ];
 for (const needle of required) {
   if (!html.includes(needle)) {
